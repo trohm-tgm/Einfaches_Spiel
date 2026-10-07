@@ -1,4 +1,4 @@
-package EinfachesSpiel.Controller;
+package controller;
 
 import model.GewinnModel;
 import view.GewinnView;
@@ -21,7 +21,7 @@ public class GewinnController {
         this.view = view;
 
         this.view.addSpielerZahlListener(new SpielerZahlListener());
-//        this.view.addNochEinmalListener(new NochEinmalListener());
+        this.view.addNochEinmalListener(new NochEinmalListener());
     }
 
     private class SpielerZahlListener implements ActionListener {
@@ -53,9 +53,26 @@ public class GewinnController {
                 view.zeigeVerloren();
             }
 
-//            Color farbe = bestimmeFarbe();
-//            view.setErgebnisFarbe(farbe);
-//            view.setPunkteFarbe(farbe);
+            Color farbe = bestimmeFarbe();
+            view.setErgebnisFarbe(farbe);
+            view.setPunkteFarbe(farbe);
+        }
+    }
+
+    private class NochEinmalListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            view.zurueckSetzen();
+        }
+    }
+
+    private Color bestimmeFarbe() {
+        if (model.hatGewonnen() || model.getRundenErgebnis() > 0) {
+            return Color.GREEN;
+        } else if (model.hatVerloren() || model.getRundenErgebnis() < 0) {
+            return Color.RED;
+        } else {
+            return Color.WHITE;
         }
     }
 }
