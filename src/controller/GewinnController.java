@@ -53,9 +53,9 @@ public class GewinnController {
                 view.zeigeVerloren();
             }
 
-            Color farbe = bestimmeFarbe();
-            view.setErgebnisFarbe(farbe);
-            view.setPunkteFarbe(farbe);
+//            Color farbe = bestimmeFarbe();
+//            view.setErgebnisFarbe(farbe);
+//            view.setPunkteFarbe(farbe);
         }
     }
 
@@ -69,13 +69,13 @@ public class GewinnController {
         }
     }
 
-    private Color bestimmeFarbe() {
-        if (model.hatGewonnen() || model.getRundenErgebnis() > 0) {
-            return Color.GREEN;
-        } else if (model.hatVerloren() || model.getRundenErgebnis() < 0) {
-            return Color.RED;
-        } else {
-            return Color.WHITE;
-        }
-    }
+//    private Color bestimmeFarbe() {
+//        if (model.hatGewonnen() || model.getRundenErgebnis() > 0) {
+ //           return Color.GREEN;
+ //       } else if (model.hatVerloren() || model.getRundenErgebnis() < 0) {
+ //           return Color.RED;
+//        } else {
+//            return Color.WHITE;
+//        }
+ //   }
 }

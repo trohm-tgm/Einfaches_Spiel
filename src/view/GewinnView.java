@@ -106,14 +106,14 @@ public class GewinnView extends JFrame {
         txtSpielerZahl.setText("");
         txtComputerZahl.setText("");
         lblRundenergebnis.setText("Tippe eine Zahl von 1 bis 9");
-        txtSpielerZahl.setEditable(true);
-        txtSpielerZahl.requestFocus();
+//        txtSpielerZahl.setEditable(true);
+//        txtSpielerZahl.requestFocus();
         btnNochEinmal.setEnabled(false);
     }
 
     public void rundeGespielt() {
-        txtSpielerZahl.setEditable(false);
-        btnNochEinmal.setEnabled(true);
+//        txtSpielerZahl.setEditable(false);
+//        btnNochEinmal.setEnabled(true);
     }
 
     public void setErgebnisFarbe(Color farbe) {
@@ -137,8 +137,8 @@ public class GewinnView extends JFrame {
         lblGesamtpunkte.setText("30");
         txtSpielerZahl.setText("");
         txtComputerZahl.setText("");
-        txtSpielerZahl.setEditable(true);
-        btnNochEinmal.setEnabled(false);
+//        txtSpielerZahl.setEditable(true);
+//        btnNochEinmal.setEnabled(false);
         setErgebnisFarbe(Color.WHITE);
         setPunkteFarbe(Color.WHITE);
     }
