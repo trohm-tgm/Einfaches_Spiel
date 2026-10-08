@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 /**
+ * Fenster des Spiels, zeigt nur an und enthält keine Spiellogik.
  * @author Thomas Rohm
  * @version 2026-28-09
  */
@@ -26,6 +27,7 @@ public class GewinnView extends JFrame {
         setVisible(true);
     }
 
+    // Baut die Oberfläche auf: Infos oben, Eingabefelder in der Mitte, Button unten
     private void start() {
         setLayout(new BorderLayout(10, 10));
         ((JComponent) getContentPane()).setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -102,6 +104,7 @@ public class GewinnView extends JFrame {
         lblRundenergebnis.setText("Verloren!");
     }
 
+    // Bereitet die nächste Runde vor
     public void zurueckSetzen() {
         txtSpielerZahl.setText("");
         txtComputerZahl.setText("");
@@ -132,6 +135,7 @@ public class GewinnView extends JFrame {
         btnNochEinmal.addActionListener(l);
     }
 
+    // Setzt die Anzeige nach Spielende komplett auf den Anfang zurück
     public void hardreset() {
         lblRundenergebnis.setText("Tippe eine Zahl von 1 bis 9");
         lblGesamtpunkte.setText("30");

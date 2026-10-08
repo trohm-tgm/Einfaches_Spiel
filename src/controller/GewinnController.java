@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
+ * Verbindet Model und View und reagiert auf Eingaben.
  * @author Thomas Rohm
  * @version 2026-28-09
  */
@@ -25,6 +26,7 @@ public class GewinnController {
     }
     //ein anderer Kommentar
     //Ein Kommentar, um die Änderungen zu markieren
+    // Wird ausgelöst, wenn der Spieler im Zahlenfeld Enter drückt
     private class SpielerZahlListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -32,7 +34,7 @@ public class GewinnController {
             try {
                 spielerZahl = Integer.parseInt(view.getSpielerZahl().trim());
             } catch (NumberFormatException ex) {
-                return;
+                return; // keine gültige Zahl -> ignorieren
             }
 
             if (spielerZahl < 1 || spielerZahl > 9) {
@@ -60,6 +62,7 @@ public class GewinnController {
         }
     }
 
+    // Button "Noch einmal!": nächste Runde bzw. Neustart nach Spielende
     private class NochEinmalListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -70,6 +73,7 @@ public class GewinnController {
         }
     }
 
+    // Grün bei Gewinn/Plus, Rot bei Verlust/Minus
     private Color bestimmeFarbe() {
         if (model.hatGewonnen() || model.getRundenErgebnis() > 0) {
             return Color.GREEN;

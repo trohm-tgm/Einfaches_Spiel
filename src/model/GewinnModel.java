@@ -1,6 +1,8 @@
 package model;
 
 /**
+ * Spiellogik: Spieler tippt eine Zahl von 1-9 gegen eine Zufallszahl des Computers.
+ * Start mit 30 Punkten, gewonnen ab 100, verloren bei 0.
  * @author thomas rohm
  * @version 2026-28-09
  */
@@ -28,10 +30,12 @@ public class GewinnModel {
         return rundenErgebnis;
     }
 
+    // Zufallszahl von 1 bis 9
     public void berechneComputerZahl() {
         this.computerZahl = (int) (Math.random() * 9) + 1;
     }
 
+    // Treffer: +20, um 1 daneben: +5, sonst: -10
     public void berechneRunde(int spielerZahl) {
         this.spielerZahl = spielerZahl;
         if (spielerZahl == computerZahl) {
