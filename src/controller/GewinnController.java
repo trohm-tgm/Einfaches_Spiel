@@ -62,6 +62,9 @@ public class GewinnController {
     private class NochEinmalListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            if (model.hatGewonnen() || model.hatVerloren()) {
+                view.hardreset();
+            }
             view.zurueckSetzen();
         }
     }

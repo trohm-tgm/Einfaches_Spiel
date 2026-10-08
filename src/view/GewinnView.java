@@ -131,4 +131,16 @@ public class GewinnView extends JFrame {
     public void addNochEinmalListener(ActionListener l) {
         btnNochEinmal.addActionListener(l);
     }
+
+    public void hardreset() {
+        lblRundenergebnis.setText("Tippe eine Zahl von 1 bis 9");
+        lblGesamtpunkte.setText("30");
+        txtSpielerZahl.setText("");
+        txtComputerZahl.setText("");
+        txtSpielerZahl.setEditable(true);
+        btnNochEinmal.setEnabled(false);
+        setErgebnisFarbe(Color.WHITE);
+        setPunkteFarbe(Color.WHITE);
+    }
+
 }
