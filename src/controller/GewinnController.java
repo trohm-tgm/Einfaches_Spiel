@@ -24,6 +24,7 @@ public class GewinnController {
         this.view.addNochEinmalListener(new NochEinmalListener());
     }
     //ein anderer Kommentar
+    //Ein Kommentar, um die Änderungen zu markieren
     private class SpielerZahlListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
